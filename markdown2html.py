@@ -18,10 +18,9 @@ def main():
         sys.exit(1)
     else:
         first_file = args[0]
-        if first_file.endswith('.md') is True:
-            if os.path.isfile(first_file) is not True:
-                sys.stderr.write("Missing {}\n".format(first_file))
-                sys.exit(1)
+        if os.path.isfile(first_file) is not True:
+            sys.stderr.write("Missing {}\n".format(first_file))
+            sys.exit(1)
         sys.exit(0)
 
 if __name__ == "__main__":
