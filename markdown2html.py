@@ -5,18 +5,24 @@
 import sys
 import os.path
 
-args = sys.argv[1:]
 
-if (len(args) < 2):
-    sys.stderr.write("Usage: ./markdown2html.py README.md README.html\n")
-    sys.exit(1)
-elif (len(args) >= 3):
-    sys.stderr.write("Too many arguments\n")
-    sys.exit(1)
-else:
-    first_file = args[0]
-    if first_file.endswith('.md') is True:
-        if os.path.isfile(first_file) is not True:
-            sys.stderr.write("Missing {}\n".format(first_file))
-            sys.exit(1)
-    sys.exit(0)
+def main():
+    """Prevent the code to be executed when imported"""
+    args = sys.argv[1:]
+
+    if (len(args) < 2):
+        sys.stderr.write("Usage: ./markdown2html.py README.md README.html\n")
+        sys.exit(1)
+    elif (len(args) >= 3):
+        sys.stderr.write("Too many arguments\n")
+        sys.exit(1)
+    else:
+        first_file = args[0]
+        if first_file.endswith('.md') is True:
+            if os.path.isfile(first_file) is not True:
+                sys.stderr.write("Missing {}\n".format(first_file))
+                sys.exit(1)
+        sys.exit(0)
+
+if __name__ == "__main__":
+    main()
