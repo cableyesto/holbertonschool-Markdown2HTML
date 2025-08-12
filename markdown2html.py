@@ -14,10 +14,6 @@ elif (len(args) >= 3):
     sys.stderr.write("Too many arguments\n")
     sys.exit(1)
 else:
-    # for arg in args:
-    #     if os.path.isfile(arg) != True:
-    #         sys.stderr.write("Missing {}\n".format(arg))
-    #         sys.exit(1)
     first_file = args[0]
     if first_file.endswith('.md') is True:
         if os.path.isfile(first_file) is not True:
