@@ -21,7 +21,8 @@ def main():
         if os.path.isfile(first_file) is not True:
             sys.stderr.write("Missing {}\n".format(first_file))
             sys.exit(1)
-        sys.exit(0)
+        else:
+            sys.exit(0)
 
 if __name__ == "__main__":
     main()
